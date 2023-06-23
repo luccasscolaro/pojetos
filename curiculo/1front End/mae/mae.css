@@ -1,0 +1,23 @@
+body{
+    background-image: url(https://usagif.com/wp-content/uploads/gif/2020-flowers-11.gif);
+    background-size: cover;
+    background-color: aqua;
+    margin-top: 90px;
+}
+
+.painel{
+    background-color: rgba(255, 255, 255, 0.288);
+    width: 500px;
+    height: 500px;
+    border-radius: 10px;
+    padding-left: 40px;
+    margin: auto;
+}
+button:hover{
+    border-radius: 5px;
+    background-color: aquamarine;
+}
+
+button{
+    background-color: cadetblue;
+}

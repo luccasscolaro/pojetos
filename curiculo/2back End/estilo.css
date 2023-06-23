@@ -1,0 +1,12 @@
+#gameCanvas{
+    border: solid 1px  black;
+    width: 800px;
+    height: 600px;
+}
+.painel{
+    margin: auto;
+    width: 800px;
+    height: 600px;
+    margin: 40px auto;
+   
+}

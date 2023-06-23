@@ -1,0 +1,64 @@
+
+
+
+body{
+    background-color: rgb(46, 46, 46);
+    padding-left: 50px;
+    padding-top: 40px;
+    justify-content: center;
+   align-items: center;
+   min-height: 10vh;
+   text-align: center;
+}
+#panl{
+    position: relative;
+    height: 600px;
+    width: 400px;
+    background-color: rgb(8, 8, 8);
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+
+    border-radius: 3px;
+}
+#panl::before,#panl::after{
+    content: '';
+    position: absolute;
+    z-index: -1;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    background:linear-gradient(45deg,#ffff01,#00ff00,#0099ff,#001aff,
+    #a200ff,#ff0055,#ff0000,#00ff00);
+    background-size: 300%;
+    border-radius: 8px;
+    animation: AnimarBorda 8s linear alternate infinite;
+}
+
+
+@keyframes AnimarBorda{
+    0%{
+        background-position: 0;
+    }
+
+    100%{
+        background-position: 300%;
+    }
+}
+
+#panl::after{
+    filter: blur(100px);
+}
+
+button{
+    border-radius: 5px;
+    border: none;
+    box-shadow: 1px 2px 15px white;
+}
+
+input{
+    border: none;
+    border-radius:5px ;
+    box-shadow:  1px 2px 15px  rgb(255, 255, 255);
+}

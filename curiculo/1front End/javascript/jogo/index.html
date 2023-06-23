@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jogo da velha</title>
+    <link rel="stylesheet" href="estilo.css">
+    <script src="javascript.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <span class="texto" id="jogador1"></span>
+            <span class="Vs">Vs</span>
+            <span class="texto" id="jogador2"></span>
+            <table class="jogo" border="2">
+                <tr>
+                    <td id="f1" class="quadrado" onclick="jogar(this)"></td>
+                    <td id="f2" class="quadrado" onclick="jogar(this)"></td>
+                    <td id="f3" class="quadrado" onclick="jogar(this)"></td>
+                </tr>
+                <tr>
+                    <td id="f4" class="quadrado" onclick="jogar(this)"></td>
+                    <td id="f5" class="quadrado" onclick="jogar(this)"></td>
+                    <td id="f6" class="quadrado" onclick="jogar(this)"></td>
+                </tr>
+                <tr>
+                    <td id="f7" class="quadrado" onclick="jogar(this)"></td>
+                    <td id="f8" class="quadrado" onclick="jogar(this)"></td>
+                    <td id="f9" class="quadrado" onclick="jogar(this)"></td>
+                </tr>
+
+            </table>
+            <button class="botão2" onclick="gerarBatalha()">gerar batalha</button>
+            <button class="botão1" onclick="reiniciar()">reiniciar</button>
+
+            <div>
+                <label for="">nome</label>
+
+                <input type="text" id="nome">
+
+                <button onclick="adicionar()" class="add">adicionar</button>
+
+                <ul id="lista">
+            </div>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

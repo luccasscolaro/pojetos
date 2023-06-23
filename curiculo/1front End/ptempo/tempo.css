@@ -1,0 +1,25 @@
+button{
+    background-color: aquamarine;
+    color:rgba(112, 112, 111, 0.945) ;
+    border-radius: 14%;
+    border-style: none;
+    box-shadow: 5px 5px 10px;
+}
+
+button:hover{
+background-color: rgba(127, 255, 212, 0.651);
+box-shadow:5px 5px 10px ;
+
+}
+
+input{
+    border-radius: 120px;
+    box-shadow: 5px 5px 10px;
+}
+
+body{
+    text-align: center;
+    background-image:  url(https://cdn.noticiasagricolas.com.br/dbimagens/previsao-do-tempo-certo-SxczS.jpg);
+    font-family: Arial, Helvetica, sans-serif;
+    margin: auto;
+}

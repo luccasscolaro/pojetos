@@ -1,0 +1,72 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+button {
+    background-color: aqua;
+    border-radius: 15px;
+   border-style: none;
+   
+}
+
+
+#moeda {
+    background-color: aquamarine;
+    border-radius: 15px;
+    
+    
+}
+
+body {  
+    background-color: rgb(8, 7, 7);
+    padding-left: 40px;
+    display: flex;
+   justify-content: center;
+   align-items: center;
+   min-height: 100vh;
+   text-align: center;
+}
+
+.painel{
+    position: relative;
+    height: 500px;
+    width: 500px;
+    background-color: rgb(8, 8, 8);
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+}
+
+.painel::before, .painel::after{
+    content: '';
+    position: absolute;
+    z-index: -1;
+    width: calc(100% + 30px);
+    height: calc(100% + 30px);
+    background:linear-gradient(45deg,#ffff01,#00ff00,#0099ff,#001aff,
+    #a200ff,#ff0055,#ff0000,#00ff00);
+    background-size: 300%;
+    border-radius: 8px;
+    animation: AnimarBorda 8s linear alternate infinite;
+}
+
+
+@keyframes AnimarBorda{
+    0%{
+        background-position: 0;
+    }
+
+    100%{
+        background-position: 300%;
+    }
+}
+
+
+
+.painel::after{
+    filter: blur(50px);
+}

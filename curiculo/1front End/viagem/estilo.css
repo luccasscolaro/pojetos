@@ -1,0 +1,78 @@
+.fundo {
+    width: 100%;
+    height: calc(600px - 6px);
+    border-bottom: 6px solid orange;
+    overflow: hidden;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    background-attachment: fixed;
+    background-image: url(https://images3.alphacoders.com/536/53625.jpg);
+}
+
+
+.aviao {
+    width: 400px;
+    position: absolute;
+    right: -10px;
+    top: 100px;
+}
+.card{
+    margin-bottom: 40px;
+    box-shadow: 2px 2px 20px black;
+    justify-content: center;
+    align-items: center;
+    transition: 2s;
+    height: 400px ;
+}
+
+.card:hover{
+    width: 20rem !important;
+    transition: 2s;
+
+}
+
+.carousel{
+    box-shadow: 2PX 2PX 20PX black;
+    justify-content: center;
+}
+
+.rodape{
+    color: white;
+    padding-top: 30px;
+    border-top: 5px solid orange;
+    padding-bottom: 30px;
+}
+a{
+    color: white !important;
+}
+
+
+.img-fluid{
+    border-radius: 15px !important;
+    margin-top: 20px;
+    justify-content: center; 
+    box-shadow: 2px 2px 20px; 
+    text-align: center;
+}
+
+.img-fluid:hover{
+    filter: blur(03px);
+    transition: 2s;
+}
+
+.texto{
+    text-align: center ;
+    margin-left: 10px;
+    margin-right: 10px;
+    justify-content: center;
+    
+}
+
+.fa-solid{
+    margin-top: 20px;
+   margin-left: 12px;
+    text-align: center;
+    justify-content: center;
+    
+}
