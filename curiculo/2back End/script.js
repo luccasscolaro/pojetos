@@ -107,16 +107,26 @@ function detectarColisao(){
 
             if(tijolo.ativo===1){
 
-                if(bolaX >tijolo.x 
-                    && bolaX< tijolo.x + tijoloLargura
-                    &&bolaY > tijolo.y
-                    &&bolaY < tijolo.y + tijoloAlutara){
+                if(bolaX + bolaRadius >tijolo.x 
+                    && bolaX - bolaRadius < tijolo.x + tijoloLargura
+                    &&bolaY + bolaRadius > tijolo.y
+                    &&bolaY - bolaRadius< tijolo.y + tijoloAlutara){
                         bolaDY= -bolaDY;
                         tijolo.ativo = 0;
                     }
             }
         }
     }
+}
+
+
+function gameover(){
+    var gameover = document.getElementById("gameover");
+    gameover.style.display = "block";
+}
+
+function Replay(){
+    document.location.reload();
 }
 
 function desenhar() {
@@ -134,12 +144,12 @@ function desenhar() {
 
     if (bolaY + bolaDY < bolaRadius) {
         bolaDY = -bolaDY;
-    } else if (bolaY + bolaDY > canvas.height - bolaRadius) {
+    } else if (bolaY + bolaRadius + bolaDY > canvas.height - bolaRadius) {
 
-        if (bolaX > raqueteX && bolaX < raqueteX + raqueteLargura) {
+        if (bolaX  > raqueteX && bolaX < raqueteX + raqueteLargura) {
             bolaDY = -bolaDY;
         } else {
-            document.location.reload();
+         gameover();
         }
     }
 
