@@ -22,6 +22,10 @@ var tijoloEspacamento = 10;
 var espasmentoSuperiorQuadro = 1;
 var espasmentoEsquerdoQuadro = 30;
 var tijolos = [];
+
+var totalPontuacao = tijoloPorLinha * tijoloProColuna * 10;
+var pontuacao = 0;
+
 for (var coluna = 0; coluna < tijoloProColuna; coluna++) {
     tijolos[coluna] = []
 
@@ -113,6 +117,9 @@ function detectarColisao(){
                     &&bolaY - bolaRadius< tijolo.y + tijoloAlutara){
                         bolaDY= -bolaDY;
                         tijolo.ativo = 0;
+                        tela = document.getElementById("ponto");
+                        pontuacao = pontuacao + 10;
+                        tela.innerHTML = pontuacao;
                     }
             }
         }
