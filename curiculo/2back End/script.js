@@ -119,7 +119,11 @@ function detectarColisao(){
                         tijolo.ativo = 0;
                         tela = document.getElementById("ponto");
                         pontuacao = pontuacao + 10;
-                        tela.innerHTML = pontuacao;
+                        tela.innerHTML = "score:"+ pontuacao;
+                        
+                            if ( pontuacao === totalPontuacao){
+                                window.Location.reload();
+                            }
                     }
             }
         }
