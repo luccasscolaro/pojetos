@@ -144,7 +144,7 @@ function desenhar() {
 
     if (bolaY + bolaDY < bolaRadius) {
         bolaDY = -bolaDY;
-    } else if (bolaY + bolaRadius + bolaDY > canvas.height - bolaRadius) {
+    } else if (bolaY + bolaDY > canvas.height - bolaRadius - raqueteAlutura) {
 
         if (bolaX  > raqueteX && bolaX < raqueteX + raqueteLargura) {
             bolaDY = -bolaDY;
