@@ -48,3 +48,45 @@ button{
     border-radius: 5px;
     padding: 5px;
 }
+
+#ponto{
+    color: #1bffff;
+    font-size: 30px;
+    font-family:initial ;
+}
+.vitoria{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(152, 70, 197);
+    z-index: 9999;
+     display: none; 
+}
+
+.mansagemVitora{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: cyan;
+    font-size: 40px;
+    text-align: center;
+    
+}
+@keyframes ampliar{
+    0%{font-size: 50px;color: green;}
+    100%{font-size: 70px;color:azure;;}
+
+}
+.para{
+    background-color: rgb(25, 235, 203);
+    align-content: center;
+    
+}
+.vc{
+    animation: ampliar 4s alternate infinite;
+    text-shadow: 6px 2px 7px rgb(255, 0, 0) ;
+}

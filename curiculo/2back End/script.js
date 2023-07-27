@@ -11,8 +11,8 @@ var velocidadeRaquete = 7;
 var bolaRadius = 5;
 var bolaX = canvas.width / 2;
 var bolaY = canvas.height - 20;
-var bolaDX = 2;
-var bolaDY = -2;
+var bolaDX = 1;
+var bolaDY = -1;
 
 var tijoloPorLinha = 3;
 var tijoloProColuna = 6;
@@ -120,9 +120,9 @@ function detectarColisao(){
                         tela = document.getElementById("ponto");
                         pontuacao = pontuacao + 10;
                         tela.innerHTML = "score:"+ pontuacao;
-                        
+                            gerarEfitoSonoro('')
                             if ( pontuacao === totalPontuacao){
-                                window.Location.reload();
+                                vitoria();
                             }
                     }
             }
@@ -138,6 +138,33 @@ function gameover(){
 
 function Replay(){
     document.location.reload();
+}
+
+function vitoria(){
+    var mensagem =document.getElementById("vitoria");
+    mensagem.style.display ="block";
+}
+
+function reiniciar(){
+    document.location.reload();
+}
+
+function gerarEfitoSonoro(som){
+  var contexto = new (window.AudioContext )();
+
+  var requisicao = new XMLHttpRequest();
+  requisicao.open('GET',som,true);
+  requisicao.responseType ='arraybuffer';
+
+  requisicao.onload = function(){
+    contexto.decodeAudioData(requisicao.response,function(buffer){
+         var fonte = contexto.createBufferSource();
+         fonte.connect(contexto.destination);
+         fonte.start(0);
+    });
+  }
+    requisicao.send();
+
 }
 
 function desenhar() {

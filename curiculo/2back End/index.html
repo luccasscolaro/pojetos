@@ -10,16 +10,23 @@
 
 <body>
     <div class="painel">
-        <canvas id="gameCanvas"  >
+        <canvas id="gameCanvas">
 
         </canvas>
         <p id="ponto">Score:0</p>
     </div>
     <div class="gamerover" id="gameover">
         <div class="mensagemGamerover">
-            SE FUDEU   
+            SE FUDEU
             <br>
-            <button onclick="Replay()" >replay</button>
+            <button onclick="Replay()">replay</button>
+        </div>
+    </div>
+        
+    <div class="vitoria " id="vitoria">
+        <div class="mansagemVitora">
+            <p class="vc">voce ganhou!</p>
+            <button class="para" onclick="reiniciar()">voltar para o jogo</button>
         </div>
     </div>
     <script src="script.js"></script>
