@@ -26,14 +26,68 @@ var tijolos = [];
 var totalPontuacao = tijoloPorLinha * tijoloProColuna * 10;
 var pontuacao = 0;
 
-for (var coluna = 0; coluna < tijoloProColuna; coluna++) {
-    tijolos[coluna] = []
+function facil() {
+    raqueteLargura = 70;
+    tijoloPorLinha = 2;
+    tijoloProColuna = 6;
+    tijoloLargura = 40;
+    tijoloAlutara = 10;
+    bolaRadius = 8;
+    bolaDX = 2;
+    bolaDY = -1;
+    totalPontuacao = tijoloPorLinha * tijoloProColuna * 10;
+    pontuacao = 0;
+    bolaX = canvas.width / 2;
+    bolaY = canvas.height - 30;
+    iniciarTijolos();
+}
 
-    for (var linha = 0; linha < tijoloPorLinha; linha++) {
+function medio() {
+    raqueteLargura = 50;
+    tijoloPorLinha = 4;
+    tijoloProColuna = 9;
+    tijoloLargura = 40;
+    tijoloAlutara = 10;
+    bolaRadius = 6;
+    bolaDX = 3;
+    bolaDY = -2;
+    totalPontuacao = tijoloPorLinha * tijoloProColuna * 10;
+    pontuacao = 0;
+    bolaX = canvas.width / 2;
+    bolaY = canvas.height - 30;
+    iniciarTijolos();
+}
 
-        tijolos[coluna][linha] = { x: 0, y: 0, ativo: 1 }
+function deficil() {
+    raqueteLargura = 40;
+    tijoloPorLinha = 3;
+    tijoloProColuna = 7;
+    tijoloLargura = 20;
+    tijoloAlutara = 12;
+    bolaRadius = 4;
+    bolaDX = 5;
+    bolaDY = -2;
+    totalPontuacao = tijoloPorLinha * tijoloProColuna * 10;
+    pontuacao = 0;
+    bolaX = canvas.width / 2;
+    bolaY = canvas.height - 30;
+    iniciarTijolos();
+}
+
+
+
+
+function iniciarTijolos() {
+    for (var coluna = 0; coluna < tijoloProColuna; coluna++) {
+        tijolos[coluna] = []
+
+        for (var linha = 0; linha < tijoloPorLinha; linha++) {
+
+            tijolos[coluna][linha] = { x: 0, y: 0, ativo: 1 }
+        }
     }
 }
+iniciarTijolos();
 
 var setaDireita = false;
 var setaEsquerta = false;
@@ -83,17 +137,17 @@ function desanharTijolos() {
     for (var coluna = 0; coluna < tijoloProColuna; coluna++) {
         for (var linha = 0; linha < tijoloPorLinha; linha++) {
 
-            if(tijolos[coluna][linha].ativo==1){
+            if (tijolos[coluna][linha].ativo == 1) {
 
-                var tijoloX = (coluna * (tijoloLargura+ tijoloEspacamento)+ espasmentoEsquerdoQuadro);
+                var tijoloX = (coluna * (tijoloLargura + tijoloEspacamento) + espasmentoEsquerdoQuadro);
                 var tijoloY = (linha * (tijoloAlutara + tijoloEspacamento) + espasmentoSuperiorQuadro);
-                
-                tijolos[coluna][linha].x =tijoloX;
-                tijolos[coluna][linha].y =tijoloY;
+
+                tijolos[coluna][linha].x = tijoloX;
+                tijolos[coluna][linha].y = tijoloY;
 
                 desenho.beginPath();
-                desenho.rect(tijoloX,tijoloY,tijoloLargura,tijoloAlutara);
-                desenho.fillStyle="green"
+                desenho.rect(tijoloX, tijoloY, tijoloLargura, tijoloAlutara);
+                desenho.fillStyle = "green"
                 desenho.fill();
                 desenho.closePath();
             }
@@ -103,68 +157,73 @@ function desanharTijolos() {
 }
 
 
-function detectarColisao(){
-    for(var coluna = 0; coluna <  tijoloProColuna; coluna++){
-        for(var linha = 0; linha < tijoloPorLinha; linha++){
-            
-            var tijolo=tijolos[coluna][linha];
+function detectarColisao() {
+    for (var coluna = 0; coluna < tijoloProColuna; coluna++) {
+        for (var linha = 0; linha < tijoloPorLinha; linha++) {
 
-            if(tijolo.ativo===1){
+            var tijolo = tijolos[coluna][linha];
 
-                if(bolaX + bolaRadius >tijolo.x 
+            if (tijolo.ativo === 1) {
+
+                if (bolaX + bolaRadius > tijolo.x
                     && bolaX - bolaRadius < tijolo.x + tijoloLargura
-                    &&bolaY + bolaRadius > tijolo.y
-                    &&bolaY - bolaRadius< tijolo.y + tijoloAlutara){
-                        bolaDY= -bolaDY;
-                        tijolo.ativo = 0;
-                        tela = document.getElementById("ponto");
-                        pontuacao = pontuacao + 10;
-                        tela.innerHTML = "score:"+ pontuacao;
-                            gerarEfitoSonoro('')
-                            if ( pontuacao === totalPontuacao){
-                                vitoria();
-                            }
+                    && bolaY + bolaRadius > tijolo.y
+                    && bolaY - bolaRadius < tijolo.y + tijoloAlutara) {
+                    bolaDY = -bolaDY;
+                    tijolo.ativo = 0;
+                    tela = document.getElementById("ponto");
+                    pontuacao = pontuacao + 10;
+                    tela.innerHTML = "score:" + pontuacao;
+                    gerarEfeitoSonoro('moeda.mp3');
+                    if (pontuacao === totalPontuacao) {
+                        vitoria();
                     }
+                }
             }
         }
     }
 }
 
 
-function gameover(){
+function gameover() {
     var gameover = document.getElementById("gameover");
     gameover.style.display = "block";
+    gerarEfeitoSonoro('gameover.mp3');
 }
 
-function Replay(){
+function Replay() {
     document.location.reload();
 }
 
-function vitoria(){
-    var mensagem =document.getElementById("vitoria");
-    mensagem.style.display ="block";
+function vitoria() {
+    var mensagem = document.getElementById("vitoria");
+    mensagem.style.display = "block";
+    gerarEfeitoSonoro('gta.mp3');
+    bolaX = 0;
+    bolaY = 0;
 }
 
-function reiniciar(){
+
+function reiniciar() {
     document.location.reload();
 }
 
-function gerarEfitoSonoro(som){
-  var contexto = new (window.AudioContext )();
+function gerarEfeitoSonoro(som) {
+    var contexto = new (window.AudioContext)();
 
-  var requisicao = new XMLHttpRequest();
-  requisicao.open('GET',som,true);
-  requisicao.responseType ='arraybuffer';
+    var requisicao = new XMLHttpRequest();
+    requisicao.open('GET', som, true);
+    requisicao.responseType = 'arraybuffer';
 
-  requisicao.onload = function(){
-    contexto.decodeAudioData(requisicao.response,function(buffer){
-         var fonte = contexto.createBufferSource();
-         fonte.connect(contexto.destination);
-         fonte.start(0);
-    });
-  }
+    requisicao.onload = function () {
+        contexto.decodeAudioData(requisicao.response, function (buffer) {
+            var fonte = contexto.createBufferSource();
+            fonte.buffer = buffer;
+            fonte.connect(contexto.destination)
+            fonte.start(0);
+        });
+    }
     requisicao.send();
-
 }
 
 function desenhar() {
@@ -173,7 +232,7 @@ function desenhar() {
     desanharBola();
     desanharTijolos();
     detectarColisao()
-    ;
+        ;
 
 
     if (bolaX + bolaDX > canvas.width - bolaRadius || bolaX + bolaDX < bolaRadius) {
@@ -184,10 +243,11 @@ function desenhar() {
         bolaDY = -bolaDY;
     } else if (bolaY + bolaDY > canvas.height - bolaRadius - raqueteAlutura) {
 
-        if (bolaX  > raqueteX && bolaX < raqueteX + raqueteLargura) {
+        if (bolaX > raqueteX && bolaX < raqueteX + raqueteLargura) {
             bolaDY = -bolaDY;
+            gerarEfeitoSonoro('soco.mp3');
         } else {
-         gameover();
+            gameover();
         }
     }
 
