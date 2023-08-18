@@ -1,0 +1,62 @@
+.painel{
+    width: 300px;
+   min-height: 300px; 
+   margin: auto;
+    border-radius: 20px;
+    border: 5px solid black;
+    box-shadow: 5px 5px 10px black;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    background-color: #a31dcc;
+}
+
+.painel:hover{
+    border-color: blue;
+    box-shadow: 5px 5px 10px blue;
+}
+
+
+
+ #titulo{
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    color: blue;
+    font-family: cursive;
+    }
+    
+
+    #autor{
+        justify-content: center;
+        align-content: center;
+        text-align: center;
+        color: blue;
+        font-family: cursive;
+    }
+
+    button{
+        margin-left: .10px;
+        border-color: black;
+        background-color: darkorchid;
+        font-family: cursive;
+        color: #f4f4f4;
+    }
+    .Titulo1{
+        font-family: cursive;
+    }
+
+
+    .Autor2{
+        font-family: cursive;
+    }
+
+    body{
+        background-color: #680f70;
+        
+    }
+
+    #listagem{
+     list-style: none;
+     margin-right: 60px;
+    }
