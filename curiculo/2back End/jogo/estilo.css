@@ -1,0 +1,92 @@
+#gameCanvas{
+    border: solid 1px  black;
+    width: 800px;
+    height: 600px;
+
+}
+.painel{
+    width: 800px;
+    height: 600px;
+    margin: 40px auto;
+   text-align: center;
+}
+.gamerover{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color:rgb(0, 0, 0);
+    z-index: 9999;
+    display: none;
+    
+}
+
+.mensagemGamerover{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: rgb(233, 45, 20);
+    z-index: 9999;
+    text-align: center;
+    font-size: 100px ;
+    font-family: fantasy;
+    animation:  piscar 3s alternate infinite;
+}
+
+ @keyframes piscar {
+    0%{color:rgb(255, 0, 0);}
+    100%{color: rgb(111, 9, 9);}
+    
+    
+ }
+button{
+    background-color: rgb(54, 252, 77);
+    color: rgb(14, 4, 2);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+#ponto{
+    color: #1bffff;
+    font-size: 30px;
+    font-family:initial ;
+}
+.vitoria{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(153, 70, 197);
+    z-index: 9999;
+     display: none; 
+}
+
+.mansagemVitora{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: rgb(0, 255, 255);
+    font-size: 40px;
+    text-align: center;
+    
+}
+@keyframes ampliar{
+    0%{font-size: 50px;color: green;}
+    100%{font-size: 70px;color:azure;;}
+
+}
+.para{
+    background-color: rgb(25, 235, 203);
+    align-content: center;
+    
+}
+.vc{
+    animation: ampliar 4s alternate infinite;
+    text-shadow: 6px 2px 7px rgb(255, 0, 0) ;
+}

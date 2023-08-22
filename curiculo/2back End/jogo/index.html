@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo Quebra Tijolos</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+    <div class="painel">
+        <canvas id="gameCanvas">
+
+        </canvas>
+        <p id="ponto">Score:0</p>
+        <div class="botoes">
+            <button class="fácil" onclick="facil()">fácil</button>
+            <button  class="médio" onclick="medio()">médio</button>
+            <button  class="dificil" onclick="deficil()">dificil</button>
+        </div>
+    </div>
+    <div class="gamerover" id="gameover">
+        <div class="mensagemGamerover">
+            SE FUDEU
+            <br>
+            <button onclick="Replay()">replay</button>
+        </div>
+    </div>
+        
+    <div class="vitoria " id="vitoria">
+        <div class="mansagemVitora">
+            <p class="vc">voce ganhou!</p>
+            <button class="para" onclick="reiniciar()">voltar para o jogo</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
